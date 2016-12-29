@@ -60,7 +60,7 @@ class Coinpayments_Settings {
 
 				if ( isset( $saved_settings[ $key ] ) ) {
 					$value = $saved_settings[ $key ];
-				} else if ( isset( $values['default'] ) ) {
+				} elseif ( isset( $values['default'] ) ) {
 					$value = $values['default'];
 				}
 

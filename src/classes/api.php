@@ -125,7 +125,7 @@ class Coinpayments_API {
 			curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
 			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0 );
 		}
-		curl_setopt( $ch, CURLOPT_HTTPHEADER, array( 'HMAC: '.$hmac ) );
+		curl_setopt( $ch, CURLOPT_HTTPHEADER, array( 'HMAC: ' . $hmac ) );
 		curl_setopt( $ch, CURLOPT_POSTFIELDS, $post_data );
 
 		// Execute the call and close cURL handle.
@@ -142,10 +142,10 @@ class Coinpayments_API {
 				return $dec;
 			} else {
 				// If you are using PHP 5.5.0 or higher you can use json_last_error_msg() for a better error message.
-				return array( 'error' => 'Unable to parse JSON result ('.json_last_error().')' );
+				return array( 'error' => 'Unable to parse JSON result (' . json_last_error() . ')' );
 			}
 		} else {
-			return array( 'error' => 'cURL error: '.curl_error( $ch ) );
+			return array( 'error' => 'cURL error: ' . curl_error( $ch ) );
 		}
 	}
 }

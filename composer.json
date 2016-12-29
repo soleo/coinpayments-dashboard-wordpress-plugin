@@ -1,0 +1,27 @@
+{
+	"name": "soleo/coinpayments-dashboard-wordpress-plugin",
+	"description": "A plugin to display stats from coinpayment.net.",
+	"type": "wordpress-plugin",
+	"require-dev": {
+		"phpunit/phpunit": "^4.0.0",
+		"10up/wp_mock": "dev-master",
+		"squizlabs/php_codesniffer": "~2.2",
+		"wp-coding-standards/wpcs": "~0.7.1",
+		"satooshi/php-coveralls": "dev-master"
+	},
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Xinjiang Shao",
+			"email": "shaoxinjiang@gmail.com"
+		}
+	],
+	"minimum-stability": "stable",
+	"scripts": {
+		"test": "./vendor/bin/phpunit --colors=always",
+		"check-style": "./vendor/bin/phpcs --standard=ruleset.xml src/ coinpayments-dashboard.php -s",
+		"fix-style": "./vendor/bin/phpcbf --standard=ruleset.xml src/ coinpayments-dashboard.php -s",
+		"post-install-cmd": "mkdir -p build/logs && ./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
+		"post-update-cmd": "mkdir -p build/logs && ./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs"
+	}
+}

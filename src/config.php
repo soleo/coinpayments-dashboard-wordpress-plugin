@@ -5,7 +5,7 @@
  * @since 1.0.0.
  */
 if ( ! defined( 'COINPAYMENTS_API_ENDPOINT' ) ) {
-    define( 'COINPAYMENTS_API_ENDPOINT', 'https://www.coinpayments.net/api.php' );
+	define( 'COINPAYMENTS_API_ENDPOINT', 'https://www.coinpayments.net/api.php' );
 }
 
 /**
@@ -14,7 +14,7 @@ if ( ! defined( 'COINPAYMENTS_API_ENDPOINT' ) ) {
  * @since 1.0.0.
  */
 if ( ! defined( 'COINPAYMENTS_PUBLIC_KEY' ) ) {
-    define( 'COINPAYMENTS_PUBLIC_KEY', '' );
+	define( 'COINPAYMENTS_PUBLIC_KEY', '' );
 }
 
 /**
@@ -23,6 +23,6 @@ if ( ! defined( 'COINPAYMENTS_PUBLIC_KEY' ) ) {
  * @since 1.0.0.
  */
 if ( ! defined( 'COINPAYMENTS_PRIVATE_KEY' ) ) {
-    define( 'COINPAYMENTS_PRIVATE_KEY', '' );
+	define( 'COINPAYMENTS_PRIVATE_KEY', '' );
 }
 

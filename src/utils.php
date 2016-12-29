@@ -8,7 +8,6 @@
  * @param  string $key Unsantizied key.
  * @return string      Sanitized key.
  */
-function coinpayments_sanitize_key( $key ) {
-    return preg_replace( '/[^a-zA-Z0-9]/', '', $key );
+function coinpayments_sanitize_key( string $key ) {
+	return preg_replace( '/[^a-zA-Z0-9]/', '', $key );
 }
-

@@ -52,6 +52,21 @@ class Coinpayments_API {
 	}
 
 	/**
+	 * Return options.
+	 *
+	 * @since 1.0.0.
+	 *
+	 * @return Coinpayments_API
+	 */
+	public static function get_options() {
+		return array(
+			'coinpayments_private_key' => self::$private_key,
+			'coinpayments_public_key' => self::$public_key,
+			'api_endpoint' => self::$api_endpoint,
+		);
+	}
+
+	/**
 	 * Set key and endpoints options
 	 *
 	 * @since 1.0.0.

@@ -65,9 +65,9 @@ class CoinPaymentsDashboard {
 	var $url_base = '';
 
 	/**
-	 * Instantiate or return the one Purgely instance.
+	 * Instantiate or return the one CoinpaymentDashboard instance.
 	 *
-	 * @return Purgely
+	 * @return CoinpaymentDashboard
 	 */
 	public static function instance() {
 		if ( is_null( self::$instance ) ) {
@@ -80,7 +80,7 @@ class CoinPaymentsDashboard {
 	/**
 	 * Initiate actions.
 	 *
-	 * @return Purgely
+	 * @return CoinpaymentDashboard
 	 */
 	public function __construct() {
 		// Set the main paths for the plugin.

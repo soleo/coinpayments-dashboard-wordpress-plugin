@@ -2,8 +2,8 @@
 /**
  * Plugin Name: CoinPayments.net Dashboard
  * Description: A plugin to display stats from coinpayments.net .
- * Author:      Xinjiang Shao
- * Version:     1.0.0
+ * Author: soleo
+ * Version: 1.0.0
  * Text Domain: coinpayments-dashboard
  * Domain Path: /languages
  */

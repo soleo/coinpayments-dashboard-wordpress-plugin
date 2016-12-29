@@ -101,6 +101,38 @@ class ApiTest extends CoinpaymentsBase {
 		$this->assertEquals($current_rates['BTC']['rate_btc'], '1.000000000000000000000000');
 	}
 
+	public function test_when_api_requests_failed() {
+		\WP_Mock::wpFunction( 'wp_remote_post', array(
+			'args' => array(
+				\WP_Mock\Functions::type( 'string' ),
+				\WP_Mock\Functions::type( 'array' ),
+			),
+			'times'  => 2,
+			'return' => '',
+		) );
+
+		\WP_Mock::wpFunction( 'is_wp_error', array(
+			'args'   => '*',
+			'times'  => 2,
+			'return' => true,
+		) );
+		\WP_Mock::wpFunction( 'wp_remote_retrieve_body', array(
+			'args'   => '*',
+			'times'  => 2,
+			'return' => '',
+		) );
+
+		$api_object = Coinpayments_API::instance();
+		$options = $this->get_default_options();
+		$api_object->set_options($options);
+
+		$current_rates = $api_object->get_rates();
+		$this->assertEquals($current_rates, array());
+
+		$current_balance = $api_object->get_balance();
+		$this->assertEquals($current_balance, array());
+	}
+
 	private function get_default_options() {
 		return array(
 			'coinpayments_public_key'       => uniqid(),

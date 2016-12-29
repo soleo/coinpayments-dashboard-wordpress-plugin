@@ -144,7 +144,7 @@ class Coinpayments_API {
 		$data = wp_remote_retrieve_body( $response );
 
 		if ( is_wp_error( $response ) ) {
-			return array( 'error' => $response->get_error_message() );
+			return array( 'error' => 'We cannot retrieve information from remote API currently.' );
 		}
 		// Parse and return data if successful.
 		if ( false !== $data ) {

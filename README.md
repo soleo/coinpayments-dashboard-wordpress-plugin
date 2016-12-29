@@ -23,3 +23,7 @@ $ composer test
 $ composer check-style
 $ composer fix-style
 ```
+
+### Credits
+
+<a href="http://www.freepik.com/free-photos-vectors/business">Business vector designed by Freepik</a>

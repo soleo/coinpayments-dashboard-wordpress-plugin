@@ -85,7 +85,7 @@ class Coinpayments_Settings {
 	 * @param  string $setting The setting name.
 	 * @return mixed           The setting value.
 	 */
-	public static function get_setting( string $setting ) {
+	public static function get_setting( $setting ) {
 		$value = '';
 
 		$negotiated_settings = self::get_settings();

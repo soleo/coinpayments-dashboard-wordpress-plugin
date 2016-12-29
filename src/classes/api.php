@@ -104,7 +104,7 @@ class Coinpayments_API {
 	 *
 	 * @var Coinpayments_API
 	 */
-	private static function make_api_call( string $cmd, $req = array() ) {
+	private static function make_api_call( $cmd, $req = array() ) {
 		// Set the API command and required fields.
 		$req['version'] = 1;
 		$req['cmd'] = $cmd;

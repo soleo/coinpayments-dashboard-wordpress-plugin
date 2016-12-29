@@ -131,20 +131,21 @@ class Coinpayments_API {
 
 		// Calculate the HMAC signature on the POST data.
 		$hmac = hash_hmac( 'sha512', $post_data, self::$private_key );
+		$headers = array( 'HMAC' => $hmac );
+		$payload = array(
+			'user-agent' => 'curl',
+			'sslverify' => false,
+			'method' => 'POST',
+			'body' => $post_data,
+			'headers' => $headers,
+		);
+		$response = wp_remote_post( self::$api_endpoint, $payload );
 
-		// Create cURL handle and initialize (if needed).
-		static $ch = null;
-		if ( null === $ch ) {
-			$ch = curl_init( self::$api_endpoint );
-			curl_setopt( $ch, CURLOPT_FAILONERROR, true );
-			curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-			curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0 );
+		$data = wp_remote_retrieve_body( $response );
+
+		if ( is_wp_error( $response ) ) {
+			return array( 'error' => $response->get_error_message() );
 		}
-		curl_setopt( $ch, CURLOPT_HTTPHEADER, array( 'HMAC: ' . $hmac ) );
-		curl_setopt( $ch, CURLOPT_POSTFIELDS, $post_data );
-
-		// Execute the call and close cURL handle.
-		$data = curl_exec( $ch );
 		// Parse and return data if successful.
 		if ( false !== $data ) {
 			if ( PHP_INT_SIZE < 8 && version_compare( PHP_VERSION, '5.4.0' ) >= 0 ) {
@@ -159,8 +160,6 @@ class Coinpayments_API {
 				// If you are using PHP 5.5.0 or higher you can use json_last_error_msg() for a better error message.
 				return array( 'error' => 'Unable to parse JSON result (' . json_last_error() . ')' );
 			}
-		} else {
-			return array( 'error' => 'cURL error: ' . curl_error( $ch ) );
 		}
 	}
 }

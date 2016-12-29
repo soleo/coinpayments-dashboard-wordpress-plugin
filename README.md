@@ -6,7 +6,7 @@
 
 ### Requirements
 
-* PHP
+* PHP >= 5.5
 * Composer
 
 ### Run Unit Tests

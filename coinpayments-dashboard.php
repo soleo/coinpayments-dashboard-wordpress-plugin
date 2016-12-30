@@ -6,6 +6,7 @@
  * Version: 1.0.0
  * Text Domain: coinpayments-dashboard
  * Domain Path: /languages
+ * GitHub Plugin URI: https://github.com/soleo/coinpayments-dashboard-wordpress-plugin
  */
 
 /**

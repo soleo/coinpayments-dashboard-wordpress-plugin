@@ -115,6 +115,5 @@
 	<rule ref="WordPress-VIP">
 		<exclude name="WordPress.VIP.RestrictedFunctions.get_term_link" />
 		<exclude name="WordPress.VIP.RestrictedFunctions.url_to_postid" />
-		<exclude name="WordPress.VIP.RestrictedFunctions.curl" />
 	</rule>
 </ruleset>

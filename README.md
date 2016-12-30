@@ -24,6 +24,10 @@ $ composer check-style
 $ composer fix-style
 ```
 
-### Credits
+### License
+
+[MIT License](/LICENSE.md)
+
+### Icon and Banner Credit
 
 <a href="http://www.freepik.com/free-photos-vectors/business">Business vector designed by Freepik</a>

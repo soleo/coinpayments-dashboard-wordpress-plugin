@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: CoinPayments.net Dashboard
+ * Plugin Name: Stats Dashboard for Coinpayments
  * Description: A plugin to display stats from coinpayments.net .
  * Author: soleo
  * Version: 1.0.0
- * Text Domain: coinpayments-dashboard
+ * Text Domain: stats-dashboard-for-coinpayments
  * Domain Path: /languages
  * GitHub Plugin URI: https://github.com/soleo/coinpayments-dashboard-wordpress-plugin
  */
@@ -12,11 +12,11 @@
 /**
  * Singleton for kicking off functionality for this plugin.
  */
-class CoinPaymentsDashboard {
+class CoinpaymentsDashboard {
 	/**
-	 * The one instance of CoinPaymentsDashboard.
+	 * The one instance of CoinpaymentsDashboard.
 	 *
-	 * @var CoinPaymentsDashboard
+	 * @var CoinpaymentsDashboard
 	 */
 	private static $instance;
 
@@ -30,7 +30,7 @@ class CoinPaymentsDashboard {
 	var $version = '1.0.0';
 
 	/**
-	 * File path to the plugin dir (e.g., /var/www/mysite/wp-content/plugins/coinpayments-dashboard).
+	 * File path to the plugin dir (e.g., /var/www/mysite/wp-content/plugins/stats-dashboard-for-coinpayments).
 	 *
 	 * @since 1.0.0.
 	 *
@@ -39,7 +39,7 @@ class CoinPaymentsDashboard {
 	var $root_dir = '';
 
 	/**
-	 * File path to the plugin src files (e.g., /var/www/mysite/wp-content/plugins/coinpayments-dashboard/src).
+	 * File path to the plugin src files (e.g., /var/www/mysite/wp-content/plugins/stats-dashboard-for-coinpayments/src).
 	 *
 	 * @since 1.0.0.
 	 *
@@ -48,7 +48,7 @@ class CoinPaymentsDashboard {
 	var $src_dir = '';
 
 	/**
-	 * File path to the plugin main file (e.g., /var/www/mysite/wp-content/plugins/coinpayments-dashboard/coinpayments-dashboard.php).
+	 * File path to the plugin main file (e.g., /var/www/mysite/wp-content/plugins/stats-dashboard-for-coinpayments/stats-dashboard-for-coinpayments.php).
 	 *
 	 * @since 1.0.0.
 	 *
@@ -57,7 +57,7 @@ class CoinPaymentsDashboard {
 	var $file_path = '';
 
 	/**
-	 * The URI base for the plugin (e.g., http://domain.com/wp-content/plugins/coinpayments-dashboard).
+	 * The URI base for the plugin (e.g., http://domain.com/wp-content/plugins/stats-dashboard-for-coinpayments).
 	 *
 	 * @since 1.0.0.
 	 *
@@ -184,7 +184,7 @@ class CoinPaymentsDashboard {
 	 * @return void
 	 */
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'coinpayments-dashboard', false, basename( dirname( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'stats-dashboard-for-coinpayments', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 	}
 }
 
@@ -194,7 +194,7 @@ class CoinPaymentsDashboard {
  * @return CoinPaymentsDashboard
  */
 function get_coinpayments_dashboard_instance() {
-	return CoinPaymentsDashboard::instance();
+	return CoinpaymentsDashboard::instance();
 }
 
 get_coinpayments_dashboard_instance();

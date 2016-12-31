@@ -3,16 +3,16 @@
 # The difference is that this script lives in the plugin's git repo & doesn't require an existing SVN repo.
 
 # main config
-PLUGINSLUG="coinpayments-dashboard"
+PLUGINSLUG="stats-dashboard-for-coinpayments"
 CURRENTDIR=`pwd`
-MAINFILE="coinpayments-dashboard.php" # this should be the name of your main php file in the wordpress plugin
+MAINFILE="stats-dashboard-for-coinpayments.php" # this should be the name of your main php file in the wordpress plugin
 
 # git config
 GITPATH="$CURRENTDIR/" # this file should be in the base of your git repository
 
 # svn config
 SVNPATH="/tmp/$PLUGINSLUG" # path to a temp SVN repo. No trailing slash required and don't add trunk.
-SVNURL="http://plugins.svn.wordpress.org/coinpayments-dashboard/" # Remote SVN repo on wordpress.org, with trailing slash
+SVNURL="http://plugins.svn.wordpress.org/stats-dashboard-for-coinpayments/" # Remote SVN repo on wordpress.org, with trailing slash
 SVNUSER="soleo" # your svn username
 
 

@@ -49,10 +49,10 @@ class Coinpayments_Settings_Page {
 	function add_admin_menu() {
 		add_submenu_page(
 			'options-general.php',
-			__( 'Coinpayments', 'coinpayments-dashboard' ),
-			__( 'Coinpayments', 'coinpayments-dashboard' ),
+			__( 'Coinpayments', 'stats-dashboard-for-coinpayments' ),
+			__( 'Coinpayments', 'stats-dashboard-for-coinpayments' ),
 			'manage_options',
-			'coinpayments-dashboard',
+			'stats-dashboard-for-coinpayments',
 			array( $this, 'options_page' )
 		);
 	}
@@ -65,7 +65,7 @@ class Coinpayments_Settings_Page {
 	 * @return void
 	 */
 	function settings_init() {
-		// Set up the option name, "coinpayments-dashboard-settings". All values will be in this array.
+		// Set up the option name, "coinpayments-settings". All values will be in this array.
 		register_setting(
 			'coinpayments-settings',
 			'coinpayments-settings',
@@ -75,7 +75,7 @@ class Coinpayments_Settings_Page {
 		// Set up the settings section.
 		add_settings_section(
 			'coinpayments_settings',
-			__( 'Coinpayments Settings', 'coinpayments-dashboard' ),
+			__( 'Coinpayments Settings', 'stats-dashboard-for-coinpayments' ),
 			array( $this, 'coinpayments_settings_callback' ),
 			'coinpayments-settings'
 		);
@@ -83,7 +83,7 @@ class Coinpayments_Settings_Page {
 		// Register all of the individual settings.
 		add_settings_field(
 			'coinpayments_public_key',
-			__( 'API Public Key', 'coinpayments-dashboard' ),
+			__( 'API Public Key', 'stats-dashboard-for-coinpayments' ),
 			array( $this, 'coinpayments_public_key_render' ),
 			'coinpayments-settings',
 			'coinpayments_settings'
@@ -91,7 +91,7 @@ class Coinpayments_Settings_Page {
 
 		add_settings_field(
 			'coinpayments_private_key',
-			__( 'API Private Key', 'coinpayments-dashboard' ),
+			__( 'API Private Key', 'stats-dashboard-for-coinpayments' ),
 			array( $this, 'coinpayments_private_key_render' ),
 			'coinpayments-settings',
 			'coinpayments_settings'
@@ -107,7 +107,7 @@ class Coinpayments_Settings_Page {
 	 * @return void
 	 */
 	public function coinpayments_settings_callback() {
-		esc_html_e( 'Please enter details related to your CoinPayment.net account. A CoinPayment.net API public and private key are required for all operations.', 'coinpayments-dashboard' );
+		esc_html_e( 'Please enter details related to your CoinPayment.net account. A CoinPayment.net API public and private key are required for all operations.', 'stats-dashboard-for-coinpayments' );
 	}
 
 	/**
@@ -123,7 +123,7 @@ class Coinpayments_Settings_Page {
 		<input type='text' class='regular-text code' name='coinpayments-settings[coinpayments_public_key]' value='<?php echo esc_attr( $options['coinpayments_public_key'] ); ?>'>
 
 		<p class="description">
-			<?php esc_html_e( 'API Public key for the Coinpayments.net account associated with this site.', 'coinpayments-dashboard' ); ?>
+			<?php esc_html_e( 'API Public key for the Coinpayments.net account associated with this site.', 'stats-dashboard-for-coinpayments' ); ?>
 		</p>
 		<?php
 	}
@@ -141,7 +141,7 @@ class Coinpayments_Settings_Page {
 		<input type='text' class='regular-text code' name='coinpayments-settings[coinpayments_private_key]' value='<?php echo esc_attr( $options['coinpayments_private_key'] ); ?>'>
 
 		<p class="description">
-			<?php esc_html_e( 'API Private key for the Coinpayments.net account associated with this site.', 'coinpayments-dashboard' ); ?>
+			<?php esc_html_e( 'API Private key for the Coinpayments.net account associated with this site.', 'stats-dashboard-for-coinpayments' ); ?>
 		</p>
 		<?php
 	}
@@ -159,7 +159,7 @@ class Coinpayments_Settings_Page {
 			<form action='options.php' method='post'>
 
 				<h1>
-					<?php esc_html_e( 'Coinpayments Settings', 'coinpayments-dashboard' ); ?>
+					<?php esc_html_e( 'Coinpayments Settings', 'stats-dashboard-for-coinpayments' ); ?>
 				</h1>
 
 				<?php

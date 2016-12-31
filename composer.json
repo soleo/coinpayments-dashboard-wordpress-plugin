@@ -19,8 +19,8 @@
 	"minimum-stability": "stable",
 	"scripts": {
 		"test": "./vendor/bin/phpunit --colors=always",
-		"check-style": "./vendor/bin/phpcs --standard=ruleset.xml src/ coinpayments-dashboard.php -s",
-		"fix-style": "./vendor/bin/phpcbf --standard=ruleset.xml src/ coinpayments-dashboard.php -s",
+		"check-style": "./vendor/bin/phpcs --standard=ruleset.xml src/ stats-dashboard-for-coinpayments.php -s",
+		"fix-style": "./vendor/bin/phpcbf --standard=ruleset.xml src/ stats-dashboard-for-coinpayments.php -s",
 		"post-install-cmd": "mkdir -p build/logs && ./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
 		"post-update-cmd": "mkdir -p build/logs && ./vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs"
 	}

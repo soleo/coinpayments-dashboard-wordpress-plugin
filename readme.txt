@@ -1,4 +1,4 @@
-=== CoinPayments Dashboard ===
+=== Stats Dashboard for Coinpayments ===
 Contributors: soleo
 Tags: coinpayments, bitcoin, payment gateway, BTC, DASH
 Requires at least: 4.2.0

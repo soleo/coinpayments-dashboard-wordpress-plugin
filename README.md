@@ -1,4 +1,4 @@
-# Coinpayments Dashboard
+# Stats Dashboard for CoinPayments
 
 [![Build Status](https://travis-ci.org/soleo/coinpayments-dashboard-wordpress-plugin.svg?branch=master)](https://travis-ci.org/soleo/coinpayments-dashboard-wordpress-plugin)
 [![Coverage Status](https://coveralls.io/repos/github/soleo/coinpayments-dashboard-wordpress-plugin/badge.svg?branch=master)](https://coveralls.io/github/soleo/coinpayments-dashboard-wordpress-plugin?branch=master)

@@ -1,5 +1,6 @@
 === Stats Dashboard for Coinpayments ===
 Contributors: soleo
+Donate link: https://www.xinjiangshao.com
 Tags: coinpayments, bitcoin, payment gateway, BTC, DASH
 Requires at least: 4.2.0
 Tested up to: trunk
@@ -45,7 +46,25 @@ decides to use a different API endpoint, or if there is a need for a user to hav
 
 *default: (string) 'https://www.coinpayments.net/api.php'*
 
+== Frequently Asked Questions ==
+
+= What kind of permission should I assign to the key pair? =
+
+The plugins requires at least `balances` and `rates` read permission.
+
+
+== Screenshots ==
+
+1. Admin Dashboard Widget
+2. Setting View
+3. Configuration View
+
 == Changelog ==
+
+= 1.0.0 =
+Initial release.
+
+== Upgrade Notice ==
 
 = 1.0.0 =
 Initial release.

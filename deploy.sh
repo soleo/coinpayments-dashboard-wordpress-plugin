@@ -1,10 +1,10 @@
-#! /bin/bash -e
+#! /bin/bash
 # A modification of Dean Clatworthy's deploy script as found here: https://github.com/deanc/wordpress-plugin-git-svn
 # The difference is that this script lives in the plugin's git repo & doesn't require an existing SVN repo.
 
 # main config
 PLUGINSLUG="stats-dashboard-for-coinpayments"
-CURRENTDIR=`pwd`
+CURRENTDIR=$(pwd)
 MAINFILE="stats-dashboard-for-coinpayments.php" # this should be the name of your main php file in the wordpress plugin
 
 # git config
@@ -30,13 +30,19 @@ if ! which svn >/dev/null; then
 	exit 1;
 fi
 
-# Check version in readme.txt is the same as plugin file after translating both to unix line breaks to work around grep's failure to identify mac line breaks
-NEWVERSION1=`grep "^Stable tag:" $GITPATH/readme.txt | awk -F' ' '{print $NF}'` | awk '{gsub(/^ +| +$/,"")} {print $0}'
+# Check version in readme.txt is the same as plugin file after translating
+# both to unix line breaks to work around grep's failure to identify mac line breaks
+NEWVERSION1=$(grep "^Stable tag:" $GITPATH/readme.txt | awk -F' ' '{print $NF}'| xargs)
 echo "readme.txt version: $NEWVERSION1"
-NEWVERSION2=`grep "^ \* Version:" $GITPATH/$MAINFILE | awk -F' ' '{print $NF}'` | awk '{gsub(/^ +| +$/,"")} {print $0}'
+NEWVERSION2=$(grep "^ \* Version:" $GITPATH/$MAINFILE | awk -F' ' '{print $NF}'| xargs)
 echo "$MAINFILE version: $NEWVERSION2"
 
-if [ "$NEWVERSION1" != "$NEWVERSION2" ]; then echo "Version in readme.txt & $MAINFILE don't match. Exiting...."; exit 1; fi
+echo "$NEWVERSION1 xxx $NEWVERSION2 xxx";
+
+if [ "v$NEWVERSION1" != "v$NEWVERSION2" ]; then
+	echo "Version in readme.txt & $MAINFILE don't match. Exiting....";
+	exit 1;
+fi
 
 echo "Versions match in readme.txt and $MAINFILE. Let's proceed..."
 

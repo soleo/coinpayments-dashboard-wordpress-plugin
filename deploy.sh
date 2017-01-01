@@ -37,8 +37,6 @@ echo "readme.txt version: $NEWVERSION1"
 NEWVERSION2=$(grep "^ \* Version:" $GITPATH/$MAINFILE | awk -F' ' '{print $NF}'| xargs)
 echo "$MAINFILE version: $NEWVERSION2"
 
-echo "$NEWVERSION1 xxx $NEWVERSION2 xxx";
-
 if [ "v$NEWVERSION1" != "v$NEWVERSION2" ]; then
 	echo "Version in readme.txt & $MAINFILE don't match. Exiting....";
 	exit 1;
@@ -105,7 +103,7 @@ svn commit --username=$SVNUSER -m "Tagging version $NEWVERSION1"
 
 echo "Pushing assets & committing it"
 cd $SVNPATH
-svn copy trunk/assets/ assets/
+svn copy trunk/assets/* assets/
 cd $SVNPATH/assets
 svn commit --username=$SVNUSER -m "Adding assets for version $NEWVERSION1"
 

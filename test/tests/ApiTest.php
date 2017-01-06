@@ -133,6 +133,36 @@ class ApiTest extends CoinpaymentsBase {
 		$this->assertEquals($current_balance, array());
 	}
 
+	public function test_when_api_json_reponse_is_malformed() {
+		\WP_Mock::wpFunction( 'wp_remote_post', array(
+			'args' => array(
+				\WP_Mock\Functions::type( 'string' ),
+				\WP_Mock\Functions::type( 'array' ),
+			),
+			'times'  => 1,
+			'return' => '',
+		) );
+
+		\WP_Mock::wpFunction( 'is_wp_error', array(
+			'args'   => '*',
+			'times'  => 1,
+			'return' => false,
+		) );
+
+		\WP_Mock::wpFunction( 'wp_remote_retrieve_body', array(
+			'args'   => '*',
+			'times'  => 1,
+			'return' => '{',
+		) );
+
+		$api_object = Coinpayments_API::instance();
+		$options = $this->get_default_options();
+		$api_object->set_options($options);
+
+		$command_response = $api_object->make_api_call('some-valid-command');
+		$this->assertEquals($command_response['error'], 'Unable to parse JSON result (Syntax error)');
+	}
+
 	private function get_default_options() {
 		return array(
 			'coinpayments_public_key'       => uniqid(),

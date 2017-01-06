@@ -119,7 +119,7 @@ class Coinpayments_API {
 	 *
 	 * @var Coinpayments_API
 	 */
-	private static function make_api_call( $cmd, $req = array() ) {
+	public static function make_api_call( $cmd, $req = array() ) {
 		// Set the API command and required fields.
 		$req['version'] = 1;
 		$req['cmd'] = $cmd;
@@ -158,7 +158,7 @@ class Coinpayments_API {
 				return $dec;
 			} else {
 				// If you are using PHP 5.5.0 or higher you can use json_last_error_msg() for a better error message.
-				return array( 'error' => 'Unable to parse JSON result (' . json_last_error() . ')' );
+				return array( 'error' => 'Unable to parse JSON result (' . json_last_error_msg() . ')' );
 			}
 		}
 	}
